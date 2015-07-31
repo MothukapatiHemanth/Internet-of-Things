@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>IoT Raspberry pi</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<style>
+.dropdown-submenu{position:relative;}
+.dropdown-submenu>.dropdown-menu{top:0;left:100%;margin-top:-6px;margin-left:-1px;-webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px 6px;border-radius:0 6px 6px 6px;}
+.dropdown-submenu:hover>.dropdown-menu{display:block;}
+.dropdown-submenu>a:after{display:block;content:" ";float:right;width:0;height:0;border-color:transparent;border-style:solid;border-width:5px 0 5px 5px;border-left-color:#cccccc;margin-top:5px;margin-right:-10px;}
+.dropdown-submenu:hover>a:after{border-left-color:#ffffff;}
+.dropdown-submenu.pull-left{float:none;}.dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px;}
+#header {
+    background-color:#A4A4A4;
+    color:#400000 ;
+    height:65px;
+    text-align:center;
+    padding:5px;
+}
+#links {
+    line-height:30px;
+    background-color:#C8C8C8;
+    height:520px;
+    width:175px;
+    float:left;
+    padding:10px;
+}
+#section {
+    height:510px;
+    width:800px;
+    float:left;
+    padding-left:50px;
+}
+#footer {
+    background-color:#A4A4A4;
+    color:#400000 ;
+    clear:both;
+    text-align:center;
+   padding:10px;
+}
+</style>
+</head>
+<body>
+
+<div id="header">
+<h1>Internet of Things<small> --Raspberry pi</small></h1>
+</div>
+<div class="container">
+ <div class="navbar navbar-default" role="navigation">
+<div class="navbar-header">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="http://hemanthmothukapati.pythonanywhere.com/iot">Home</a></li>
+		 <li><a href="http://hemanthmothukapati.pythonanywhere.com/project">Project</a></li>
+<li><a href="https://data.sparkfun.com/streams/pwvnLo9VnESV83OR4gan">Lab 2</a></li>
+
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="#">Lab 3</a>
+    <ul class="dropdown-menu">
+      <li><a href="http://hemanthmothukapati.pythonanywhere.com/data_json" >Data in Table format</a></li>
+      <li><a href="http://hemanthmothukapati.pythonanywhere.com/chart2" >Data in chart format</a></li>
+      <li><a href="http://hemanthmothukapati.pythonanywhere.com/hello" >Hello Page</a></li>
+	  <li><a href="http://hemanthmothukapati.pythonanywhere.com/static/map.html" >Static Map</a></li>
+    </ul>
+  </li>
+
+
+
+        <li><a href="http://hemanthmothukapati.pythonanywhere.com/gmap">Lab 4</a></li>
+		<li class="dropdown-submenu">
+    <a tabindex="-1" href="#">Lab 5</a>
+    <ul class="dropdown-menu">
+      <li><a href="http://hemanthmothukapati.pythonanywhere.com/marker">Marker</a></li>
+        <li><a href="http://hemanthmothukapati.pythonanywhere.com/weather">Weather</a></li>
+    </ul>
+  </li>
+
+
+
+        <li><a href="http://hemanthr.pythonanywhere.com/map">Lab 6</a></li>
+      </ul>
+    </div>
+
+
+      <div id="section">
+
+
+
+<h2>About Project</h2>
+<p> <b>The internet of Things</b> is like a connection of a group of physical objects,sensors or things such as raspberry pi,
+wifi dongle, keyboard, mouse and display etc , software as tightvncserver, sensors as photosensor &  DS18B20 temperature sensor, and connectivity is
+made among the objects where the communication can happen between the objects and the aggregator where the data is collected/placed i.e like data in
+a database or data in a website. This data is analaysed and visualized. Other connected devices are absed on the required infrastructure.
+</p>
+<p>
+Generally in this project I have used temperature sensor DS18B20,MPC3008 for analog to digital conversion and photoresistor for measuring the temperature in
+celsius and luminous intensity. I used sensors with combination of raspberry pi to measure the temperature and light values. We used breadboard, cobler,
+temperature sensor, phototransistor, 10K ohms resistor and few connection wires for creating a circuit. Here we pushed data to the data sparkfun website by
+using the http get request in python programming. Data sparkfun acted as aggregator which collected the temperature and light readings of all their
+particular locations using sensors. </p>
+<p>I have created a visualization by performing an analysis on the data available in sparkfun. That visulazitaion can beviewed by using the pythonanywhere
+link. Here I have used Twilio for getting a text message which provides the temperature of particular location where I placed my sensors. I am adding mail
+functionality where the temperature and light intensity of particular location will be send to my mobile for every 6 hours.
+</p>
+<p>
+Coming to future enhancements I am planning to get an message whenevere there is a immediate change in temperature and luminous
+intensity value goes very low. I have chosen this project i.e mainly temperature measurement because ohio is one of the places which experiences all
+type of weather as too much hot, snow, raining and spring. By this project we can get the temperature information of a particular location in ohio.
+
+</p>
+
+
+
+
+</div>
+</div>
+
+
+<div id="footer">
+Copyright © hmothuka@kent.edu
+</div>
+
+</body>
+</html>
