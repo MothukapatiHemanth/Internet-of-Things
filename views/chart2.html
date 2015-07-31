@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <script type="text/javascript"
+          src="https://www.google.com/jsapi?autoload={
+            'modules':[{
+              'name':'visualization',
+              'version':'1',
+              'packages':['corechart']
+            }]
+          }"></script>
+
+    <script type="text/javascript">
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Zip');
+		data.addColumn('number', 'Temperature');
+		data.addColumn('number', 'Humidity');
+
+		%for item in data:
+    		data.addRow(
+    			['44240', {{item['temp']}}, {{item['humidity']}}]
+    		);
+		%end
+
+
+        var options = {
+          title: 'Kent Weather',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="curve_chart" style="width: 900px; height: 500px"></div>
+  </body>
+</html>
