@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>IoT Project</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<style>
+.dropdown-submenu{position:relative;}
+.dropdown-submenu>.dropdown-menu{top:0;left:100%;margin-top:-6px;margin-left:-1px;-webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px 6px;border-radius:0 6px 6px 6px;}
+.dropdown-submenu:hover>.dropdown-menu{display:block;}
+.dropdown-submenu>a:after{display:block;content:" ";float:right;width:0;height:0;border-color:transparent;border-style:solid;border-width:5px 0 5px 5px;border-left-color:#cccccc;margin-top:5px;margin-right:-10px;}
+.dropdown-submenu:hover>a:after{border-left-color:#ffffff;}
+.dropdown-submenu.pull-left{float:none;}.dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px;}
+
+	#header {
+    background-color:#3FABF5;
+    color:#400000 ;
+    height:65px;
+    text-align:center;
+    padding:5px;
+}
+#links {
+    line-height:30px;
+    background-color:#C8C8C8;
+    height:520px;
+    width:175px;
+    float:left;
+    padding:10px;
+}
+#section {
+    height:510px;
+    width:800px;
+    float:left;
+    padding-left:30px;
+	padding-top:30px;
+}
+#footer {
+    background-color:#3FABF5;
+    color:#400000 ;
+    clear:both;
+    text-align:center;
+   padding:10px;
+}
+</style>
+
+<body>
+<div id="header">
+<h1>Internet of Things<small> --Raspberry pi</small></h1>
+</div>
+<div class="container">
+
+<div class="navbar navbar-default" role="navigation">
+<div class="navbar-header">
+      <ul class="nav nav-pills nav-stacked">
+        <li ><a href="http://hemanthmothukapati.pythonanywhere.com/iot">Home</a></li>
+		 <li class="active"><a href="http://hemanthmothukapati.pythonanywhere.com/project">Project</a></li>
+<li><a href="https://data.sparkfun.com/streams/pwvnLo9VnESV83OR4gan">Lab 2</a></li>
+
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="#">Lab 3</a>
+    <ul class="dropdown-menu">
+      <li><a href="http://hemanthmothukapati.pythonanywhere.com/data_json" >Data in Table format</a></li>
+      <li><a href="http://hemanthmothukapati.pythonanywhere.com/chart2" >Data in chart format</a></li>
+      <li><a href="http://hemanthmothukapati.pythonanywhere.com/hello" >Hello Page</a></li>
+	  <li><a href="http://hemanthmothukapati.pythonanywhere.com/static/map.html" >Static Map</a></li>
+    </ul>
+  </li>
+
+
+
+        <li><a href="http://hemanthmothukapati.pythonanywhere.com/gmap">Lab 4</a></li>
+		<li class="dropdown-submenu">
+    <a tabindex="-1" href="#">Lab 5</a>
+    <ul class="dropdown-menu">
+      <li><a href="http://hemanthmothukapati.pythonanywhere.com/marker">Marker</a></li>
+        <li><a href="http://hemanthmothukapati.pythonanywhere.com/weather">Weather</a></li>
+    </ul>
+  </li>
+
+
+
+        <li><a href="http://hemanthr.pythonanywhere.com/map">Lab 6</a></li>
+      </ul>
+    </div>
+<div id="section">
+<center>
+<p>Please find visualizations and Map below..</p>
+</center>
+</br>
+<b><i><a href="http://hemanthr.pythonanywhere.com/templight">Temperature and light visualization</a></i></b>
+<p>Here in this we have two visualizations</p>
+<p>1. Temperature Bar Graph </br>
+        In this Bar Graph we have temperature values of recent 2 hours data pushed in the datasparkfun.com stream url. Temperature is recorded at each location using DS18B20 temperature sensor. This is Dynamic Graph which will be changing whenever there is an entry in the Class stream for IoT</p>
+<p>2. Light Bar Graph </br>
+        In this Bar Graph we have light values recorded by user's raspberry pi. This light is calculated using photosensor. It has recent 2 hours data pushed by all users into the datasparkfun.com stream url. This is Dynamic Graph which will be changing whenever there is an entry in the Class stream for IoT</p>
+<center><a href="http://hemanthr.pythonanywhere.com/templight">Click here for visualization</a></center></br>
+<b><i><a href="http://hemanthr.pythonanywhere.com/tempmap">Kent Google Map - Temperature in and around</a></i></b>
+<p> Here in this map I have displayed the markers and also circles where it shows the difference in temperature by colors in different locations. </p>
+<center><a href="http://hemanthr.pythonanywhere.com/tempmap">Click here for Map</a></center></br>
+</center>
+</div>
+</div>
+<div id="footer">
+Copyright © hmothuka@kent.edu
+</div>
+
+</body>
+</html>
