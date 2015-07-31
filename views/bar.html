@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- EXTERNAL LIBS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://www.google.com/jsapi"></script>
+
+    <!-- EXAMPLE SCRIPT -->
+    <script>
+// load chart lib
+      google.load('visualization', '1', {packages: ['corechart','bar']});
+// call drawChart once google charts is loaded
+      google.setOnLoadCallback(drawChart);
+	  google.setOnLoadCallback(drawChart1);
+      // onload callback
+      function drawChart()
+      {
+		var public_key = 'aGOE6rY5mxcxX1GNnOKq';
+        var jsonData = $.ajax({
+          url: 'https://data.sparkfun.com/output/' + public_key + '.json',
+          data: {page: 1},
+          dataType: 'jsonp',
+        }).
+        done(function (results)
+        {
+          var data = new google.visualization.DataTable();
+          data.addColumn('datetime', 'Time');
+          data.addColumn('number', 'temperature');
+          $.each(results, function (i, row) {
+            data.addRow([
+              (new Date(row.timestamp)),
+              parseFloat(row.temperature)
+            ]);
+          });
+        var options = {
+            title: 'Temperature ',
+            //chartArea: {width: '75%'},
+            colors: ['Orange'],
+            animate: true,
+            //barStrokeWidth : 20,
+            barsOffset: 5,
+            orientation: 'horizontal',
+            hAxis:{title: 'Time'},
+            vAxis:{title: 'Temp F'},
+		};
+        var chart = new google.visualization.BarChart($('#chart').get(0));
+         chart.draw(data, options);
+		});
+	}
+	function drawChart1()
+      {
+		var public_key = 'aGOE6rY5mxcxX1GNnOKq';
+        var jsonData = $.ajax({
+          url: 'https://data.sparkfun.com/output/' + public_key + '.json',
+          data: {page: 1},
+          dataType: 'jsonp',
+        }).
+        done(function (results)
+        {
+          var data = new google.visualization.DataTable();
+          data.addColumn('string', 'user');
+          data.addColumn('number', 'light');
+          $.each(results, function (i, row) {
+            data.addRow([
+              (row.user),
+              parseFloat(row.light)
+            ]);
+          });
+        var options = {
+            title: 'Light',
+            //chartArea: {width: '75%'},
+            colors: ['Black'],
+            animate: true,
+            //barStrokeWidth : 20,
+            barsOffset: 5,
+            orientation: 'horizontal',
+            hAxis:{title: 'Users'},
+            vAxis:{title: 'Luminous intensity'},
+			seriesType: "bars",
+			series: {1: {type: "line"}}
+        };
+        var chart1 = new google.visualization.BarChart($('#chart1').get(0));
+         chart1.draw(data, options);
+		});
+	}
+
+    </script>
+
+  </head>
+  <body>
+    <div id="chart" style="width:1000px;height:500px;"></div>
+	<div id="chart1" style="width:1000px;height:500px;"></div>
+  </body>
+</html>
